@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import AddExpensesOrIncome from "./Incomeorexpences";
 
 const navbar = () => {
+  const [isHide, setIsHide] = useState(true);
   return (
     <>
       <div className="header flex justify-center">
@@ -11,19 +13,14 @@ const navbar = () => {
           <div className="flex flex-col justify-center">date&time</div>
           <div className="pages flex flex-col justify-center">
             <ul className="flex gap-5 font-semibold ">
-              <li className="">
-                <a href="/">Home</a>
-              </li>
-              <li className="">
-                <a href="/addexpence">AddExpence</a>
-              </li>
-              <li className="">
-                <a href="/addincome">AddIncome</a>
-              </li>
+              <button onClick={() => setIsHide(!isHide)}>
+                AddExpensesOrIncome
+              </button>
             </ul>
           </div>
         </div>
       </div>
+      {!isHide && <AddExpensesOrIncome />}
     </>
   );
 };
