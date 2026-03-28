@@ -25,6 +25,9 @@ This project is currently **not responsive for mobile devices**.
 
 💡 Developers are welcome to contribute and make it responsive!
 
+## 🤝 Contributing
+Check the Issues tab for tasks you can work on!
+
 ## 🛠️ Installation
 
 ```bash
