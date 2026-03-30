@@ -25,20 +25,24 @@ const totalView = () => {
 
   return (
     <>
-      <div className="mainn bg-[#76767684] flex justify-around p-5 m-5 mt-20 rounded-2xl gap-15">
-        <div className="expence border-4 rounded-4xl w-6/12 h-25 bg-[#f8b9b9] border-[#FF0000] flex items-center justify-around ">
-          <img src={Expenses} alt="" className="w-25" />
-          <h3 className="text-3xl font-bold  ">Total Expenses</h3>
-          <h4 className="text-4xl font-bold text-[#FF0000]">
-            ₹{calcTotal("expense") || 0}
-          </h4>
+      <div className="mainn bg-[#76767684] flex flex-col sm:flex-row justify-around p-3 sm:p-5 m-3 sm:m-5 mt-5 sm:mt-20 rounded-2xl gap-3 sm:gap-15">
+        <div className="expence border-4 rounded-4xl w-full sm:w-6/12 h-auto sm:h-25 bg-[#f8b9b9] border-[#FF0000] flex flex-col sm:flex-row items-center justify-around p-3 sm:p-5 gap-2 sm:gap-0">
+          <img src={Expenses} alt="" className="w-16 sm:w-25" />
+          <div className="text-center sm:text-left">
+            <h3 className="text-xl sm:text-3xl font-bold">Total Expenses</h3>
+            <h4 className="text-2xl sm:text-4xl font-bold text-[#FF0000]">
+              ₹{calcTotal("expense") || 0}
+            </h4>
+          </div>
         </div>
-        <div className="income border-4 rounded-4xl w-6/12 h-25 bg-[#e0fbd4] border-[#00ff00] flex items-center justify-around ">
-          <img src={Income} alt="" className="w-25" />
-          <h3 className="text-3xl font-bold">Total Income</h3>
-          <h4 className="text-4xl font-bold text-[#06BF37]">
-            ₹{calcTotal("income") || 0}
-          </h4>
+        <div className="income border-4 rounded-4xl w-full sm:w-6/12 h-auto sm:h-25 bg-[#e0fbd4] border-[#00ff00] flex flex-col sm:flex-row items-center justify-around p-3 sm:p-5 gap-2 sm:gap-0">
+          <img src={Income} alt="" className="w-16 sm:w-25" />
+          <div className="text-center sm:text-left">
+            <h3 className="text-xl sm:text-3xl font-bold">Total Income</h3>
+            <h4 className="text-2xl sm:text-4xl font-bold text-[#06BF37]">
+              ₹{calcTotal("income") || 0}
+            </h4>
+          </div>
         </div>
       </div>
     </>

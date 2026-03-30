@@ -36,15 +36,20 @@ const navbar = () => {
   };
   return (
     <>
-      <div className="header flex justify-center">
-        <div className="w-200 h-13 bg-[#ffffff88] flex border-2 rounded-3xl justify-between gap-20 mt-15 p-5">
-          <div className="name text-2xl font-[900] text-[#002369] flex flex-col justify-center">
+      <div className="header flex justify-center px-2">
+        <div className="w-full max-w-4xl bg-[#ffffff88] flex flex-col sm:flex-row border-2 rounded-3xl justify-between items-center gap-2 sm:gap-5 mt-4 sm:mt-15 p-3 sm:p-5">
+          <div className="name text-xl sm:text-2xl font-[900] text-[#002369] flex flex-col justify-center">
             TRACASH
           </div>
-          <div className="flex flex-col justify-center">date&time</div>
+          <div className="flex flex-col justify-center text-xs sm:text-base">
+            date&time
+          </div>
           <div className="pages flex flex-col justify-center">
-            <ul className="flex gap-5 font-semibold ">
-              <button onClick={() => setIsHide(!isHide)}>
+            <ul className="flex gap-2 sm:gap-5 font-semibold text-xs sm:text-base">
+              <button
+                onClick={() => setIsHide(!isHide)}
+                className="whitespace-nowrap"
+              >
                 AddExpensesOrIncome
               </button>
             </ul>
@@ -52,12 +57,12 @@ const navbar = () => {
         </div>
       </div>
       {!isHide && (
-        <div className="flex justify-center gap-20 border-2 bg-[#7e7e7e] m-20 mt-18 rounded-2xl px-10 py-10">
-          <div className="bg-gray-200 rounded-3xl p-6 w-5/12 shadow-lg">
+        <div className="flex flex-col lg:flex-row justify-center gap-4 lg:gap-20 border-2 bg-[#7e7e7e] m-2 sm:m-5 lg:m-20 mt-2 sm:mt-4 lg:mt-18 rounded-2xl px-4 sm:px-10 py-4 sm:py-10">
+          <div className="bg-gray-200 rounded-3xl p-4 sm:p-6 w-full lg:w-5/12 shadow-lg">
             <form onSubmit={onSubmitHandler} className="flex flex-col gap-4">
               {/* Date + Amount Row */}
-              <div className="flex gap-3">
-                <div className="flex flex-col w-1/2">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col w-full sm:w-1/2">
                   <label className="text-sm mb-1">Date</label>
                   <input
                     type="date"
@@ -67,7 +72,7 @@ const navbar = () => {
                   />
                 </div>
 
-                <div className="flex flex-col w-1/2">
+                <div className="flex flex-col w-full sm:w-1/2">
                   <label className="text-sm mb-1">Amount</label>
                   <input
                     required
@@ -82,7 +87,7 @@ const navbar = () => {
               {/* Type */}
               <div className="flex flex-col">
                 <label className="text-sm mb-1">Type</label>
-                <div className="bg-gray-500 rounded-full px-4 py-2 flex gap-6 text-white">
+                <div className="bg-gray-500 rounded-full px-4 py-2 flex gap-4 sm:gap-6 text-white text-sm">
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="radio"
@@ -136,11 +141,11 @@ const navbar = () => {
             </form>
           </div>
 
-          <div className="lesson bg-gray-200 rounded-3xl p-6 w-5/12 shadow-lg flex flex-col justify-center gap-5">
-            <div className="head text-4xl font-extrabold text-center">
+          <div className="lesson bg-gray-200 rounded-3xl p-4 sm:p-6 w-full lg:w-5/12 shadow-lg flex flex-col justify-center gap-3 sm:gap-5">
+            <div className="head text-2xl sm:text-4xl font-extrabold text-center">
               input explanation
             </div>
-            <div className=" text-xl font-semibold text-left flex flex-col gap-3 text-[#4d4d4d] ">
+            <div className="text-base sm:text-xl font-semibold text-left flex flex-col gap-2 sm:gap-3 text-[#4d4d4d] ">
               <h5>
                 {" "}
                 <span className="text-[#2f2f2f] font-bold">Date:</span> Try to
